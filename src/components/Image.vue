@@ -1,5 +1,5 @@
 <template>
-  <!-- Ici dans la classe image je met l'inmage et un titre pour la prévisualisation de la tringle à rideau. -->
+  <!-- Ici dans la classe image je met l'image et un titre pour la prévisualisation de la tringle à rideau. -->
   <div class="Image">
     <h2>Tringle Rail</h2>
     <img src="../assets/logo.png" alt="tringle">

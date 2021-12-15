@@ -1,20 +1,48 @@
 <template>
   <div class="custom">
     <div class="etape-1">
-      <h2>J’indique mes dimensions</h2>
+      <h2>1/3  J’indique mes dimensions</h2>
       <label for="rail-lenght"><strong>Longueur du rail:</strong></label>
       <input type="number" placeholder="max. 200cm" id="number" name="rail-lenght"
        min="0" max="200">
     </div>
+    <button>Valider</button>
+    <!-- Ici j'essaye de montre l'étape d'après une fois le bouton cliquer -->
+    <button v-on:click="show">Montrer</button>
+  <div v-if="isDisplay">
+    <p>Je suis visible !</p>
+    <button v-on:click="hide">Cacher</button>
+  </div>
+
     <div class="etape-2">
-      <h2>J’indique mon type de rail</h2>
-    </div>
-    <div class="etape-3">
-      <h2>Je sélectionne ma couleur</h2>
+      <h2>2/3  J’indique mon type de rail</h2>
       <div class="option">
         <label for="color-b">
           <div class="white">
           <input type="radio" id="noir" name="color-b" value="blanc" checked>
+          <img class="oui" src="../assets/modele_DS.png" alt="blanc">
+        </div>
+        <span>Blanc</span>
+        </label>
+
+        <label for="color-n">
+          <div class="Black">
+          <input type="radio" id="noir" name="color-n" value="noir" checked>
+          <img class="oui" src="../assets/modele_CS.png" alt="noir">
+        </div>
+        <span>Noir</span>
+        </label>
+
+      </div>
+      <button>Valider</button>
+
+    </div>
+    <div class="etape-3">
+      <h2>3/3  Je sélectionne ma couleur</h2>
+      <div class="option">
+        <label for="color-b">
+          <div class="white">
+          <input type="radio" id="blanc" name="color-b" value="blanc" checked>
           <img src="../assets/Blanc.png" alt="blanc">
         </div>
         <span>Blanc</span>
@@ -26,9 +54,11 @@
           <img src="../assets/Noir.png" alt="noir">
         </div>
         <span>Noir</span>
+        
         </label>
       </div>
     </div>
+    <button>Valider</button>
   </div>
 </template>
 
@@ -37,6 +67,10 @@ export default {
   name: 'Custom',
   props: {
     msg: String
+  } data: { // La j'essaye de créé un évènement pour afficher la troisième étape avec un bouton
+    let etape3 = document.getElementsByClassName("etape-3");
+
+    etape3.addEventListener("mouseclick", () => {etape3.style.visibility = "show";});
   }
 }
 </script>
@@ -109,5 +143,14 @@ label {
 .etape-3 {
   padding: 1em;
   border-bottom: 1px solid #000000;
+  visibility: hidden;
+}
+
+.oui {
+  width: 40%;
+}
+
+.custom {
+  width: 25%;
 }
 </style>
