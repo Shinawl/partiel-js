@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AddPanier msg=""/>
+  <Image msg=""/>
+  <Panier msg=""/>
+  <Custom msg=""/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AddPanier from './components/AddPanier.vue'
+import Image from './components/Image.vue'
+import Panier from './components/Panier.vue'
+import Custom from './components/Custom.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AddPanier,
+    Image,
+    Panier,
+    Custom
   }
 }
 </script>
@@ -22,5 +30,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
 }
 </style>
